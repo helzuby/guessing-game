@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Number Guessing Game </title>
+
+</head>
+<body>
+	<h1 id="active">Number Guessing </h1>
+	<p>Guess a number between 1-100</p>
+  <p>Enter a Guess</p>
+  <input type ="text" id="userInput"><button id="btn">Submit</button>
+
+     
+
+      <script src="script.js"></script> 
+</div>
+</body>
+</html>	
