@@ -1,21 +1,31 @@
 let btn = document.getElementById('submit');
-let output = document.getElementById('userInput');
+let input = document.getElementById('userInput');
+let output = document.getElementById('output');
+let number = Math.floor(Math.random() * 100);
+	console.log(number);
 
-let randomnumber = [Math.floor(Math.random() * 100)];
+let guess = 0
 
-btn.addEventListener('click',function(){
-	let input = document.getElementById('userInput').value
-// i used the .value to access the value of the Html.
-	if(input == number){
-		output.innerHTML =`You guessed right, your number was $(randomnumber)
 
-	}  else if(input > number){
-     output.innerHTML = "You guessed too high!"
+btn.addEventListener('click', function() {
+  let input = parseInt(document.getElementById('userInput').value);
+ 
+  // I used .value to access the HTML document.
 
-	}; 
+  if (input === number) {
+    output.innerHTML = `You guessed right, your number was ${number}`;
+    // Use ${number} to display the correct number
 
-	if(input < number){
-          output.innerHTML = "You guessed too low!"
-	}
+  } else if (input > number) {
+    output.innerHTML = "You guessed too high!";
 
-)};
+  } else if (input < number) {
+    output.innerHTML = "You guessed too low!";
+  }
+
+  guess += 1
+  if(guess > 3) {
+  	output.innerHTML = `You have exceeded your number of tries, the correct number is ${number}`
+  }
+
+});
