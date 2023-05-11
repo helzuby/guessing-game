@@ -6,26 +6,30 @@ let number = Math.floor(Math.random() * 100);
 
 let guess = 0
 
-
 btn.addEventListener('click', function() {
-  let input = parseInt(document.getElementById('userInput').value);
- 
-  // I used .value to access the HTML document.
+    let input = parseInt(document.getElementById('userInput').value);
 
-  if (input === number) {
-    output.innerHTML = `You guessed right, your number was ${number}`;
-    // Use ${number} to display the correct number
-
-  } else if (input > number) {
-    output.innerHTML = "You guessed too high!";
-
-  } else if (input < number) {
-    output.innerHTML = "You guessed too low!";
-  }
-
-  guess += 1
+    if (isNaN(input) || input < 1 || input > 100) {
+        output.innerHTML = "Please enter a valid number between 1 and 100.";
+    
+    } else {
+        if (input === number) {
+            output.innerHTML = `You guessed right! The number was ${number}`;
+       
+        } else if (input > number) {
+            output.innerHTML = "You guessed too high!";
+        
+        } else if (input < number) {
+            output.innerHTML = "You guessed too low!";
+        }
+       
+         guess += 1
   if(guess > 3) {
-  	output.innerHTML = `You have exceeded your number of tries, the correct number is ${number}`
+    output.innerHTML = `You have exceeded your number of tries, the correct number is ${number}`
+    return;
   }
 
+    }
 });
+
+
